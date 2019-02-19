@@ -18,7 +18,7 @@ def sort_puppy(l: list) -> list:
             p += 1
 
     q = len(l) - 1
-    for j in range(len(l) - 1, -1, -1):
+    for j in range(len(l) - 1, p-1, -1):
         if l[j].type == "toy":
             l[j], l[q] = l[q], l[j]
             q -= 1
