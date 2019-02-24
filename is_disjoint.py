@@ -3,6 +3,7 @@
 :output: whether some pair of these sets is disjoint - has no elements in common
 """
 
+
 def are_disjoint(s1: set, s2: set)->bool:
     """
     Determine if two sets are disjoint (has no elements in common)
