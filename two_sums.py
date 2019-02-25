@@ -1,6 +1,8 @@
 """
 Input: an array of integers
 Output: indices of two numbers such as they add up to a specific target
+
+* You may assume that each input would have exactly one solution, and you may not use the same element twice.
 """
 
 
