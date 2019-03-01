@@ -53,3 +53,23 @@ def two_sum_2(nums, target):
         else:
             # store the diff as the key and the index as value
             dic[num] = i
+
+
+def two_sum_3(nums, target):
+    """
+    Two-pass hash table
+    :type nums: List[int]
+    :type target: int
+    :rtype: List[int]
+    """
+    dic = {}
+    # add value and index to the dict
+    for i in range(len(nums)):
+        dic[nums[i]] = i
+
+    # check if complementary exists
+    for j in range(len(nums)):
+        comple = target - nums[j]
+        if comple in dic.keys() and dic[comple] != j:
+            return [j, dic.get(comple)]
+
