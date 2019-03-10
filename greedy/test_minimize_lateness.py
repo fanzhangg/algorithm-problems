@@ -1,4 +1,5 @@
 from unittest import TestCase
+import unittest
 from minimal_lateness_scheduling import *
 
 
@@ -12,3 +13,5 @@ class TestMinimizeLateness(TestCase):
         self.assertTrue(schedule[0].deadline <= schedule[1].deadline)
 
 
+if __name__ == '__main__':
+    unittest.main()
