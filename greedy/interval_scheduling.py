@@ -4,12 +4,11 @@
 - Output: max(subset of compatible jobs)
   * compatible job: jobs do not overlap
 """
-
 from datetime import time
 
 
 class Job:
-    def __init__(self, start, end):
+    def __init__(self, start: time, end: time):
         self.start = start
         self.end = end
 
@@ -35,15 +34,16 @@ class Job:
         return ''.join((str(self.start), '--', str(self.end)))
 
 
-def schedule_interval(jobs: list):
-    compat_jobs = []
+def schedule_interval(jobs: list)->list:
+    """Select jobs with earlier end time"""
+    selected_jobs = []
     jobs.sort()
     max_end_time = None
     for job in jobs:
-        if max_end_time is None or job.start > max_end_time:
-            compat_jobs.append(job)
+        if max_end_time is None or job.start >= max_end_time:
+            selected_jobs.append(job)
             max_end_time = job.end
-    return compat_jobs
+    return selected_jobs
 
 
 

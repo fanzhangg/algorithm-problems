@@ -1,5 +1,6 @@
 from unittest import TestCase
 from interval_scheduling import *
+from datetime import time
 
 
 class TestScheduleInterval(TestCase):
