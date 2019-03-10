@@ -7,6 +7,24 @@ output:
   - l(s_{i+1}) - l(s_{i}) \leq 50
 """
 
+__about__ = """
+The Macalester track team has decided to host a marathon that runs down Grand Avenue for the faculty, staff and students
+to participate in. Given your algorithm’s professor’s propensity to eat burritos in class, you are a little worried that
+some of the faculty won’t make it unless you have numerous rest (and food) stops along the way. You’ve talked to the 
+businesses along Grand Avenue and compiled a list of n potential rest stops along the street, with the geographic 
+location of each such stop (some businesses did not like the idea of sweaty professors resting outside of them). 
+Assume that Grand Avenue is a line segment [0, l] of length l meters. For simplicity, assume a rest stop has zero width; 
+each location is just a point, rather than an interval on the line.)
+
+According to your observations of how often your professors need to eat, you consider a section of the course properly 
+covered if there is a rest stop within 50 meters of it (inclusive). So a single rest stop can cover 100 meters 
+(if placed directly in the center of that 100 meters). Since the track team is rather small, and you need to man all 
+the rest stops, you want to find a way to cover the entire course by opening as few rest stops as possible. Give an 
+algorithm that places as few rest stops as possible, while covering the entire length of the course, or (correctly) 
+reports that covering the entire length of the street is not possible given the available rest stops 
+provided by the businesses.
+"""
+
 
 class Stop:
     def __init__(self, index: int, position: int):

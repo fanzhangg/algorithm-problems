@@ -1,9 +1,10 @@
 import math
 
 """
-    :given: n points in the plane, each specified by (x, y) coordinates
-    :output: the pair of points that are closest together.
+given: n points in the plane, each specified by (x, y) coordinates
+output: the pair of points that are closest together.
 """
+
 
 def get_distance(a, b)->float:
     x_diff = b[0] - a[0]
