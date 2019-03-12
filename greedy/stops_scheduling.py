@@ -42,25 +42,20 @@ def schedule_stops(stops: list, l: int)->list:
     # sort the stops by increasing distance from the start
     #  sort() uses only < comparison between items
     stops.sort()
-    last_selected_stop_pos = 0
     schedule = []
-    pre_stop = Stop(0, 0)
-    index = 0
+    max_dist = -50
+    pre_stop = Stop(0, -50)
+
+    if l - stops[-1].position > 50:
+        return []
 
     for stop in stops:
-        if stop.position - pre_stop.position > 50:
+        if stop.position - pre_stop.position > 100:
             return []
-        if stop.position - last_selected_stop_pos > 50:
+        elif stop.position - max_dist > 100:
             schedule.append(pre_stop)
-            last_selected_stop_pos = pre_stop.position
-        # if the stop is the end of the list, test if l - pos(s) <= 50
-        if index == len(stops) - 1:
-            if l - stop.position > 50:
-                return []
-            else:
-                schedule.append(stop)
+            max_dist = pre_stop.position
         pre_stop = stop
-        index += 1
     return schedule
 
 
