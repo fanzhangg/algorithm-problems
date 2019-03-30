@@ -3,8 +3,10 @@ given:
   - a line segment [0, l]
   - n Potential rest stops
 output:
-  - Minimize the number of stops
-  - l(s_{i+1}) - l(s_{i}) \leq 50
+  - schedule to minimize the number of stops
+  - schedule[1].position <= 50
+  - schedule[i].position - schedule[i-1].position- <= 100
+  - l - schedule[-1].position <= 50
 """
 
 __about__ = """
@@ -57,5 +59,3 @@ def schedule_stops(stops: list, l: int)->list:
             max_dist = pre_stop.position
         pre_stop = stop
     return schedule
-
-
