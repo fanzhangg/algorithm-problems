@@ -4,7 +4,7 @@ Output: The sum of values from the position to the end of the array.
 """
 
 
-def sum_after(nums: list, pos: int):
+def sum_after(nums: list, pos=0):
     if pos < 0:
         pos = 0
     if pos > len(nums) - 1:
