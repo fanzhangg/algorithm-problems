@@ -1,0 +1,10 @@
+# Three Laws of Recursion
+- A recursive algorithm must have a **base case**;
+    - **Base case:**
+      - The condition that allows the algorithm to stop the recursion;
+      - A problem that can be solved directly
+- A recursive algorithm must change its state and move toward the base case;
+  - Usually data gets smaller
+- A recursive algorithm must call it self, recursively.
+
+
