@@ -7,6 +7,7 @@
   - [x] Interval Scheduling
   - [x] Scheduling to minimize lateness
   - [x] Food Stops Scheduling
+  - [x] Players Matching to minimalize the max height difference  
     
 - Hash Table
   - [x] Two Sums
@@ -17,4 +18,23 @@
   - [x] Merge Two Sorted Lists
     
 - Tree
-    - [x] Stress Test
+  - [x] Stress Test
+    
+- Recursion
+  - [x] Convert an Integer to a n-nary String
+  - [x] Count Down Numbers
+  - [x] Factorial
+  - [x] Fibonacci
+  - [x] Is Palindrome
+  - [x] Reverse String
+  - [x] Sum Numbers after a Position in the List
+  - [x] Sum the Numbers in a Range
+
+- Sorting
+  - [ ] Bubble Sort
+  - [ ] Insertion Sort
+  - [ ] Heapsort
+  - [x] Mergesort
+  
+  - [ ] Sort Puppies
+  - [ ] Boredom Game
