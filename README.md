@@ -38,3 +38,6 @@
   
   - [ ] Sort Puppies
   - [ ] Boredom Game
+  
+ - Counting
+   - [x] Count Permutations with no Step
