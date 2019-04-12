@@ -29,6 +29,7 @@
   - [x] Reverse String
   - [x] Sum Numbers after a Position in the List
   - [x] Sum the Numbers in a Range
+  - [x] Goodfellas
 
 - Sorting
   - [ ] Bubble Sort
