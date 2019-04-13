@@ -3,17 +3,18 @@ import random
 
 
 class Person(object):
-    def __init__(self, is_good: bool):
+    def __init__(self, is_good: bool, name: int or str):
         self.is_good = is_good
+        self.name = name
 
     def __bool__(self):
         return self.is_good
 
     def __str__(self):
         if self.is_good:
-            return "Good"
+            return ":".join((str(self.name), "Good"))
         else:
-            return "Bad"
+            return ":".join((str(self.name), "Bad"))
 
     def other_is_good(self, other: Person)->bool:
         """
@@ -57,4 +58,14 @@ def find_single_good(people: list)-> Person:
         people = people[:-1]
 
     return find_single_good(people)
+
+
+def identify_all_people(good: Person, people: list) -> list:
+    result = []
+    for p in people:
+        if good.other_is_good(p):
+            result.append(True)
+        else:
+            result.append(False)
+    return result
 
