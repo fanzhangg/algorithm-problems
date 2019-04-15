@@ -19,8 +19,6 @@ def get_closest_pair(points_x: List[Tuple], points_y: List[Tuple])->Tuple[float,
     if len(points_x) <= 3:
         return do_base_case(points_x)
 
-    # TODO: x-value of middle element in Px?
-
     mid_x = get_mid_x(points_x)
 
     mid_i = get_mid_i(points_x)
@@ -132,4 +130,3 @@ def get_mid_x(points: list)->float:
     """
     mid_i = get_mid_i(points)
     return points[mid_i][0]
-
