@@ -30,7 +30,12 @@
   - [x] Sum Numbers after a Position in the List
   - [x] Sum the Numbers in a Range
   - [x] Goodfellas
-
+  - [x] Get Closest Points Pair
+  - [x] Find Median
+  
+- Dynamic Programming
+  - [x] Fibonnaci by Memoization & Dynamic Programming
+  
 - Sorting
   - [ ] Bubble Sort
   - [ ] Insertion Sort
