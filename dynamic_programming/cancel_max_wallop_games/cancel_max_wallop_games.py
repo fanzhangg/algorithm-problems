@@ -19,7 +19,7 @@ def cancel_max_wallop_games(games: List[Game], max_games_num: int)->Tuple[int, L
     Recurrence relationship:
     - if i = 0, OPT(i, k) = 0
     - if k = 0, OPT(i, k) = 0
-    - if i = 1, and k != 0, OPT(i, k) = vi
+    - if i = 1, and k != 0, OPT(i, k) = v1
     - else, OPT(i, k) = max(OPT(i-1, k), OPT(i-2, k - 1) + vi)
     """
     cancelled_games = [[None for _ in range(max_games_num + 1)] for _ in range(len(games) + 1)]
@@ -44,11 +44,12 @@ def cancel_max_wallop_games(games: List[Game], max_games_num: int)->Tuple[int, L
     for k in range(1, max_games_num + 1):
         for i in range(2, len(games) + 1):
             if opt[i-1][k] >= games[i - 1].walloping + opt[i - 2][k - 1]:
+                # Not add w_i to S
                 opt[i][k] = opt[i-1][k]
                 cancelled_games[i][k] = cancelled_games[i-1][k]
             else:
                 opt[i][k] = games[i - 1].walloping + opt[i - 2][k - 1]
-                # Add games[i-1] to the set
+                # Add w_i to S
                 cancelled_game_set = cancelled_games[i - 2][k - 1]
                 cancelled_game_set.add(games[i - 1].opponent)
                 cancelled_games[i][k] = cancelled_game_set
