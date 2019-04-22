@@ -50,7 +50,8 @@ def cancel_max_wallop_games(games: List[Game], max_games_num: int)->Tuple[int, L
             else:
                 opt[i][k] = games[i - 1].walloping + opt[i - 2][k - 1]
                 # Add w_i to S
-                cancelled_game_set = cancelled_games[i - 2][k - 1]
+                cancelled_game_set = cancelled_games[i - 2][k - 1].copy()
                 cancelled_game_set.add(games[i - 1].opponent)
                 cancelled_games[i][k] = cancelled_game_set
+
     return opt[-1][-1], cancelled_games[-1][-1]
