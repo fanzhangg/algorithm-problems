@@ -39,4 +39,3 @@ def knapsack(max_weight: int, items: List[Item])->Tuple[int, set]:
                     item_set.add(items[i - 1].name)
                     item_sets[i][w] = item_set
     return opt[-1][-1], item_sets[-1][-1]
-
