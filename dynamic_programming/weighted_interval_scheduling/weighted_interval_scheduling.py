@@ -13,7 +13,7 @@ class Job(object):
 
 def get_last_compatible_job(jobs: List[Job], i: int)->int or None:
     """
-    :param jobs: a set of requests i...n such as each job j has start, finish, and value
+    :param jobs: a set of requests i...n such as each job j has start, finish, and name
     :param i: the index of the current job
     :return: None if there is no compatible job, else return the last compatible job
     """
@@ -27,7 +27,7 @@ def get_last_compatible_job(jobs: List[Job], i: int)->int or None:
 
 def recursive_wis(jobs: List[Job])->int:
     """
-    :jobs: set R of requests i...n such as each job j has start, finish, and value
+    :jobs: set R of requests i...n such as each job j has start, finish, and name
     :return: set S of compatible requests such as the sum of their values is maximized
     """
     # sort by finishing time
@@ -104,7 +104,7 @@ def dynamic_wis(jobs: List[Job])->tuple:
         else:
             opt2 = opt[P[j - 1] + 1] + vj
         opt[j] = max(opt1, opt2)
-        # opt[j] = max(opt[j-1], jobs[j - 1].value + opt[P[j - 1]])
+        # opt[j] = max(opt[j-1], jobs[j - 1].name + opt[P[j - 1]])
 
     find_solution(8)
     return opt[- 1], solution
