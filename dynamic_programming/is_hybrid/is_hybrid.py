@@ -15,13 +15,13 @@ def is_hybrid(x: str, y: str, z: str)->bool:
     opt[0][0] = True
 
     for i in range(1, len(x) + 1):
-        if x[i - 1] == z[i - 1]:
+        if opt[i - 1][0] and x[i - 1] == z[i - 1]:
             opt[i][0] = True
         else:
             opt[i][0] = False
 
     for j in range(1, len(y) + 1):
-        if y[j - 1] == z[j - 1]:
+        if opt[0][j - 1] and y[j - 1] == z[j - 1]:
             opt[0][j] = True
         else:
             opt[0][j] = False
@@ -34,9 +34,5 @@ def is_hybrid(x: str, y: str, z: str)->bool:
                 opt[i][j] = True
             else:
                 opt[i][j] = False
-
-        for line in opt:
-            print(line)
-        print("\n")
 
     return opt[-1][-1]

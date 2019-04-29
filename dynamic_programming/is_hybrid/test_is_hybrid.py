@@ -8,6 +8,16 @@ class TestIsHybrid(TestCase):
         y = "goodbye"
         z = "hgoeoldlboye"
 
-        result = is_hybrid(x, y, z)
-        print(result)
+        self.assertTrue(is_hybrid(x, y, z))
 
+        x = "python"
+        y = "java"
+        z = "pyjathvona"
+
+        self.assertTrue(is_hybrid(x, y, z))
+
+    def test_len_neq(self):
+        self.assertFalse(is_hybrid("helllo", "goodby", "hello"))
+
+    def test_false_case(self):
+        self.assertFalse(is_hybrid("hello", "world", "hewrolllod"))
