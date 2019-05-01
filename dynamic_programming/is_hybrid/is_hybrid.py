@@ -1,11 +1,13 @@
 def is_hybrid(x: str, y: str, z: str)->bool:
     """
     :optimal substructure:
-    - opt(n, m) = opt(n-1, m) + x[n] or opt(n, m-1) + y[m]
-    - n or m = 0
-    :param x: a str of n
-    :param y: a str of m
-    :param z: a str of z
+    - If i = 0, j = 0, opt[0, 0] = True
+    - If i = 0, opt[0, j] = opt[0, j-1]  and y[j] = z[j]
+    - If j = 0, opt[i, 0] = opt[i-1, 0] and x[i-1] = z[i]
+    - opt[i, j] = (opt[i-1, j] and x[i] = z[i + j]) or (opt[i, j-1] + y[j] = z[i+j])
+    :param x: a str of p
+    :param y: a str of q
+    :param z: a str of m
     :return: true if x is a hybrid of y and z
     """
     if not len(x) + len(y) == len(z):
