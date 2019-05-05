@@ -1,6 +1,6 @@
 from unittest import TestCase
 import string
-from sequence_alignment import alignment
+from global_sequence_alignment import alignment
 
 
 class TestAlignment(TestCase):
