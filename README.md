@@ -1,7 +1,7 @@
 # Algorithm Problems
 - Graph
-  -[x] Find kingpin
-  -[ ] Bird sounds
+  - [x] Find kingpin
+  - [ ] Bird sounds
     
 - Greedy
   - [x] Interval Scheduling
