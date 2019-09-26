@@ -1,6 +1,6 @@
 def selection_sort(items: list)->list:
     """
-    Look for the largest value in a pass, and place it in a proper place after a pass.
+    Look for the largest name in a pass, and place it in a proper place after a pass.
     Repeat the process n-1 times.
     :param items: an unsorted list
     :return: an ordered list

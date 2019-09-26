@@ -1,7 +1,7 @@
 def bubble_sort(items: list)->list:
     """
     Makes multiple passes through a list. In each pass, it compares adjacent items and
-    exchanges those that are out of order, and place the next largest value in its proper
+    exchanges those that are out of order, and place the next largest name in its proper
     place
     :param items: a list of items
     :return: a sorted list

@@ -7,3 +7,6 @@ class TestLocalAlignment(TestCase):
         s2 = "TGTTACGG"
         s1 = "GGTTGACTA"
         self.assertEqual((13, ('GTTGAC', 'GTT-AC')), local_alignment(s1, s2, -2))
+
+        result = local_alignment("acaWacaXacaYacacacacaceecWXXZ", "WXYZ", -1)
+        print(result)

@@ -35,7 +35,7 @@ def merge(left_l: list, right_l: list)->list:
     merged_l = []
 
     while len(merged_l) < len(left_l) + len(right_l):
-        # Add the smaller value to the list and update the corresponding index
+        # Add the smaller name to the list and update the corresponding index
         if left_l[left_i] <= right_l[right_i]:
             merged_l.append(left_l[left_i])
             left_i += 1

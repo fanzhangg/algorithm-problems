@@ -1,15 +1,15 @@
 """
 Input: n dishes, each dish gets 2 scores
 * No 2 values are same, n is a power of 2
-Output: lower median of the 2n values (n-largest value)
+Output: lower median of the 2n values (n-largest name)
 """
 
 
 def query(k: int, judge_l: list)->int:
     """
-    :k: value specified to a judge
+    :k: name specified to a judge
     :judge_l: a sorted list of judge's values from the largest to shortest
-    :return: the k-th largest value in the values given by judges
+    :return: the k-th largest name in the values given by judges
     """
     return judge_l[k]
 

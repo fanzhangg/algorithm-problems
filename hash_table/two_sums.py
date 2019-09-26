@@ -32,7 +32,7 @@ def two_sum_1(nums, target):
         if num in dic:
             return [dic[num], i]
         else:
-            # store the diff as the key and the index as value
+            # store the diff as the key and the index as name
             diff = target - num
             dic[diff] = i
 
@@ -51,7 +51,7 @@ def two_sum_2(nums, target):
         if diff in dic:
             return [dic[diff], i]
         else:
-            # store the diff as the key and the index as value
+            # store the diff as the key and the index as name
             dic[num] = i
 
 
@@ -63,7 +63,7 @@ def two_sum_3(nums, target):
     :rtype: List[int]
     """
     dic = {}
-    # add value and index to the dict
+    # add name and index to the dict
     for i in range(len(nums)):
         dic[nums[i]] = i
 

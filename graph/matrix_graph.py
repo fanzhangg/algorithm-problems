@@ -2,7 +2,7 @@
 
 __about__ = """
 The size of the matrix is V*V where V is the number of vertices in the graph
-The value of an entry Aij is either 1 if there is an edge from vi to vj or 0 if there is not.
+The name of an entry Aij is either 1 if there is an edge from vi to vj or 0 if there is not.
 
 - matrix is symmetric in case of undirected graph
 
