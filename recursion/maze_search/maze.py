@@ -3,6 +3,10 @@ import turtle
 from os import path
 import os
 
+"""
+A visualization of the recursive algorithm to find the way out of a maze
+"""
+
 OBSTACLE = "+"
 PART_OF_PATH = 'O'
 TRIED = '.'
