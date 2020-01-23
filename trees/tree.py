@@ -34,7 +34,7 @@ class Tree:
         """Generate an iteration of Position representing p's children"""
         raise NotImplementedError("Must be implemented by a subclass")
 
-    def __len___(self):
+    def __len__(self):
         """Return the total number of element in the trees"""
         raise NotImplementedError("Must be implemented by a subclass")
 
@@ -45,7 +45,7 @@ class Tree:
 
     def is_leaf(self, p):
         """Return True if Position p represents the leaf of the trees / does not have any children"""
-        return self.num_children == 0
+        return self.num_children(p) == 0
     
     def is_empty(self):
         """Return True if the trees is empty"""
