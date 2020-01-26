@@ -179,3 +179,18 @@ class TestLinkedBinaryTree(TestCase):
         elements = [v.element() for v in visited]
         self.assertEqual([0, 1, 2, 3, 4, 5, 6], elements)
 
+    def test_inorder(self):
+        tree = LinkedBinaryTree()
+        root = tree._add_root(0)
+        left = tree._add_left(root, 1)
+        right = tree._add_right(root, 2)
+
+        tree._add_left(left, 3)
+        tree._add_right(left, 4)
+
+        tree._add_left(right, 5)
+        tree._add_right(right, 6)
+
+        visited = tree.inorder()
+        elements = [v.element() for v in visited]
+        self.assertEqual([3, 1, 4, 0, 5, 2, 6], elements)

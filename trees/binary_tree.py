@@ -37,3 +37,27 @@ class BinaryTree(Tree):
             yield self.left(p)
         if self.left(p) is not None:
             yield self.right(p)
+
+    def positions(self):
+        """Generate an iteration of the tree's positions"""
+        return self.inorder()
+
+    def inorder(self):
+        """Generate an inorder iteration of positions in the tree"""
+        if not self.is_empty():
+            for p in self._subtree_inorder(self.root()):
+                yield p
+
+    def _subtree_inorder(self, p):
+        """Generate an inorder iteration of positions in subtree rooted at p"""
+        left = self.left(p)
+        if left:
+            for other in self._subtree_inorder(left):
+                yield other
+
+        yield p
+
+        right = self.right(p)
+        if right:
+            for other in self._subtree_inorder(right):
+                yield other
