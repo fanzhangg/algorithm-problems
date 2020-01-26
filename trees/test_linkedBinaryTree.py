@@ -135,8 +135,47 @@ class TestLinkedBinaryTree(TestCase):
     def test_preorder(self):
         tree = LinkedBinaryTree()
         root = tree._add_root(0)
-        tree._add_left(root, 1)
-        tree._add_right(root, 2)
+        left = tree._add_left(root, 1)
+        right = tree._add_right(root, 2)
+
+        tree._add_left(left, 3)
+        tree._add_right(left, 4)
+
+        tree._add_left(right, 5)
+        tree._add_right(right, 6)
         visited = tree.preorder()
         elements = [v.element() for v in visited]
-        self.assertEqual([0, 1, 2], elements)
+        self.assertEqual([0, 1, 3, 4, 2, 5, 6], elements)
+
+    def test_postorder(self):
+        tree = LinkedBinaryTree()
+        root = tree._add_root(0)
+        left = tree._add_left(root, 1)
+        right = tree._add_right(root, 2)
+
+        tree._add_left(left, 3)
+        tree._add_right(left, 4)
+
+        tree._add_left(right, 5)
+        tree._add_right(right, 6)
+
+        visited = tree.postorder()
+        elements = [v.element() for v in visited]
+        self.assertEqual([3, 4, 1, 5, 6, 2, 0], elements)
+
+    def test_breadth_first(self):
+        tree = LinkedBinaryTree()
+        root = tree._add_root(0)
+        left = tree._add_left(root, 1)
+        right = tree._add_right(root, 2)
+
+        tree._add_left(left, 3)
+        tree._add_right(left, 4)
+
+        tree._add_left(right, 5)
+        tree._add_right(right, 6)
+
+        visited = tree.breadth_first()
+        elements = [v.element() for v in visited]
+        self.assertEqual([0, 1, 2, 3, 4, 5, 6], elements)
+

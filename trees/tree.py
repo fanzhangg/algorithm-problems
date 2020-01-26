@@ -1,3 +1,5 @@
+from queue import Queue
+
 class Tree:
     """
     Abstract base class representing a trees structure
@@ -68,8 +70,30 @@ class Tree:
 
     def _subtree_preorder(self, p):
         """Generate a preorder iteration of positions in subtree rooted at p"""
-        yield p # Visit p before its subtrees
+        yield p  # Visit p before its subtrees
         for c in self.children(p):  # For each child:
-            for other in self._subtree_preorder(c): # Do preorder of c's subtree
-                yield other    # Yild each to our caller
+            for other in self._subtree_preorder(c):  # Do preorder of c's subtree
+                yield other    # Yield each to our caller
+
+    def postorder(self):
+        """Generate a postorder iteration of positions in the tree"""
+        if not self.is_empty():
+            for p in self._subtree_postorder(self.root()):
+                yield p
+
+    def _subtree_postorder(self, p):
+        """Generate a postorder iteration of positions in subtree rooted at p"""
+        for c in self.children(p):
+            for other in self._subtree_postorder(c):
+                yield other
+        yield p
+
+    def breadth_first(self):
+        queue = Queue()
+        queue.put(self.root())
+        while not queue.empty():  # Queue is not empty
+            p = queue.get()
+            yield p
+            for child in self.children(p):
+                queue.put(child)
 
