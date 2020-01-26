@@ -131,3 +131,12 @@ class TestLinkedBinaryTree(TestCase):
 
         self.assertEqual(2, e1.element())
         self.assertEqual(3, e2.element())
+
+    def test_preorder(self):
+        tree = LinkedBinaryTree()
+        root = tree._add_root(0)
+        tree._add_left(root, 1)
+        tree._add_right(root, 2)
+        visited = tree.preorder()
+        elements = [v.element() for v in visited]
+        self.assertEqual([0, 1, 2], elements)

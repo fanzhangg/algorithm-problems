@@ -50,3 +50,26 @@ class Tree:
     def is_empty(self):
         """Return True if the trees is empty"""
         return len(self) == 0
+
+    def positions(self):
+        """Return all postions of the tree"""
+        return self.preorder()
+
+    def __iter__(self):
+        """Generate an iteration of the tree's elements"""
+        for p in self.positions():
+            yield p.element()
+
+    def preorder(self):
+        """Generate a preorder iteration of positions in the tree"""
+        if not self.is_empty():
+            for p in self._subtree_preorder(self.root()):
+                yield p
+
+    def _subtree_preorder(self, p):
+        """Generate a preorder iteration of positions in subtree rooted at p"""
+        yield p # Visit p before its subtrees
+        for c in self.children(p):  # For each child:
+            for other in self._subtree_preorder(c): # Do preorder of c's subtree
+                yield other    # Yild each to our caller
+
