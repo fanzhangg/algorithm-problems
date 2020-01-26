@@ -124,7 +124,7 @@ class LinkedBinaryTree(BinaryTree):
             raise ValueError("Right child exists")
         self._size += 1
         node._right = self._Node(e, node)   # Node is its parent
-        return self._make_position(node._left)
+        return self._make_position(node._right)
 
     def _replace(self, p: Position, e: any)->Position:
         """
