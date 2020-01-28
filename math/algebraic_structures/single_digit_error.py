@@ -7,11 +7,17 @@ def has_single_digit_error(number: str):
     dot_product = 0
     mult = 3
     for n in num_li:
-        dot_product + mult * n
+        dot_product += mult * n
+        if mult == 3:
+            mult = 1
+        else:
+            mult = 3
+    print(dot_product)
     if dot_product % 10 == 0:
         return False
     else:
         return True
 
-ans = has_single_digit_error("0210006565897")
+
+ans = has_single_digit_error("021000658978")
 print(ans)
