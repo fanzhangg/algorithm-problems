@@ -16,15 +16,13 @@ def merge_arrays(lists)->list:
 
     merged_q = []
 
-    while True:
-        if not queues:
-            break
-        for q in queues:
+    for q in queues:
+        while True:
             if q:
                 n = heapq.heappop(q)
                 heapq.heappush(merged_q, n)
             else:
-                queues.remove(q)
+                break
 
     merged_li = []
 
