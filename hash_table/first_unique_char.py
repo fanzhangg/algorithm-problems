@@ -1,5 +1,3 @@
-from collections import Counter
-
 def find_first_unique_char(s: str):
     """
     return: the index of the first non-repeating character in it; return -1 if it does not exist
