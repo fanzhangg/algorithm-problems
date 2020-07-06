@@ -116,4 +116,32 @@ class Graph:
         :return: number of outgoing edges incident to vertex v in the graph
         If graph is directed, optional parameter used to count incoming edges
         """
-        adj = self._outgoing if outgoing 
+        adj = self._outgoing if outgoing else self._incoming
+        return len(adj[v])
+
+    def incident_edges(self, v, outgoing=True):
+        """
+        :return: all outgoing edges incident to vertex v in the graph
+        If the graph is directed, optional parameter used to request incoming edges
+        """
+        adj = self._outgoing if outgoing else self._incoming
+        for edge in adj[v].values():
+            yield edge
+
+    def insert_vertex(self, x=None):
+        """
+        Insert and return a new Vertex with element x
+        :param x: element
+        :return: a new Vertex with x
+        """
+        v = Vertex(x)
+        self._outgoing[v] = {}
+        if self.is_directed():
+            self._incoming[v] = {}
+        return v
+
+    def insert_edge(self, u, v, x=None):
+        """Insert and return a new Edge from u to v with aux"""
+        e = Edge(u, v, x)
+        self._outgoing[u][v] = e
+        self._incoming[v][u] = e
