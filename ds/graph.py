@@ -103,3 +103,17 @@ class Graph:
         result = set()
         for secondary_map in self._outgoing.values():
             return
+
+    def get_edge(self, u, v):
+        """
+        :return: the edge from u to v, or None if not adjacent,
+        none if v not adjacent
+        """
+        return self._outgoing[u].get(v)
+
+    def degree(self, v, outgoing=True):
+        """
+        :return: number of outgoing edges incident to vertex v in the graph
+        If graph is directed, optional parameter used to count incoming edges
+        """
+        adj = self._outgoing if outgoing 
